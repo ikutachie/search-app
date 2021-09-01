@@ -115,7 +115,7 @@ function response_other(request, response){
             });
             
             // for(var i=0; i<all_name.length; i++){
-            //   console.log(all_name[i].Property)
+            //   console.log(all_name[i].Property.Detail)
             // }
             var storeDic = {};
             json.Feature.forEach(store => {

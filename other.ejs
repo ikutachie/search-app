@@ -61,7 +61,11 @@
                       <tr>
                           <div class="list-group-item">
                           <dl>
-                            <td><a href=<%=storeDic[storeName].detail.YUrl%>><%= storeName%></a>　</td>
+                            <%if(storeDic[storeName].detail.YUrl){%>
+                              <td><a href=<%=storeDic[storeName].detail.YUrl%>><%= storeName%></a>　</td>
+                              <%}else{%>
+                                <td><%= storeName%></td>
+                              <%}%>
                             <td><%=storeDic[storeName].address%>　</td>
                             <td><%=storeDic[storeName].tel%>　</td>
                           </dl>
