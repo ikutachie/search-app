@@ -1,0 +1,58 @@
+header{
+  /* background-image:url("wrapping020bY4.png")!important; */
+  background-repeat: repeat-x;
+  width: 100%;
+}
+h1 {
+  font-family: 'Abel', sans-serif;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 50pt;
+  color:rgb(45, 117, 185);
+  width: 100%;
+  text-align: center;
+  margin: 0px;
+  background-color: aliceblue; 
+  
+}
+body {
+  font-size: 14pt;
+  color:#260657;
+  text-align: center;
+  margin: 5px;
+  background-color: floralwhite;
+}
+h2{
+  font-family:'Patrick Hand', cursive; 
+  text-align: center;
+  font-size: 30px;
+}
+p{
+  font-family: 'Kiwi Maru', serif;
+  font-family: 'Patrick Hand', cursive;
+  text-align: center;
+}
+table{
+  text-align: left;
+  
+  font-size: 12pt;
+
+}
+footer{
+  width: 100%;
+  text-align: center;
+  background-color: aliceblue;
+  color:#97cdf3;
+  position: absolute;
+  bottom:0;
+  
+}
+h3{
+  font-family: 'Abel', sans-serif;
+  color: #260657;
+}
+span{
+  text-align: right;
+}
+.active{
+  background-color: burlywood;
+}

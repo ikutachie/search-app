@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang='ja'>
+    <head><meta charset='utf-8'>
+        <title>Index</title>
+        <style>
+        </style>
+        <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <!-- <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous"> -->
+        <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&family=Patrick+Hand&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="./jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="./paginathing.min.js">
+        </script>
+          <script type="text/javascript" >
+            $(function() {
+              $('.list-group').paginathing({//親要素のclassを記述
+                perPage:5,//1ページあたりの表示件数
+                prevText:'前へ',//1つ前のページへ移動するボタンのテキスト
+                nextText:'次へ',//1つ次のページへ移動するボタンのテキスト
+                activeClass: 'navi-active',//現在のページ番号に任意のclassを付与できます
+              })
+            });
+          </script>
+        <!-- <script type="text/javascript">
+          jQuery(document).ready(function($){
+            $('.list-group').paginathing({
+              perPage: 5,
+              firstLast: true,
+              prevText:'前へ' ,
+              nextText:'次へ' ,
+              activeClass: 'active',
+            })
+          });
+        </script> -->
+    </head>
+        <body class="container">
+            <header>
+                <h1 class="display-4"><%=title%></h1>
+                <%var count =Object.keys(storeDic).length%>
+                <span class="count">検索結果<%=count %>件<span>
+            </header>
+            <div role="main">
+                <p><%=content%></p>
+                <form method="POST" action="/other">
+                <input type="text" name="msg" class="form-control">
+                <input type="submit" value="Search" class="btn btn primary">
+                </form>
+                <table border="1" bordercolor="#f6efdb"cellspacing="0" cellpadding="0" class="table" align="center">
+                  <tr><th>店名</th><th>住所</th><th>電話番号</th></tr>
+                  <div class ="list-group">
+                   <% for(var storeName in storeDic) {%>
+                      <tr>
+                          <div class="list-group-item">
+                          <dl>
+                            <td><a href=<%=storeDic[storeName].detail.YUrl%>><%= storeName%></a>　</td>
+                            <td><%=storeDic[storeName].address%>　</td>
+                            <td><%=storeDic[storeName].tel%>　</td>
+                          </dl>
+                          </div>
+                      </tr>
+                    <%}%>
+                  </div>
+                </table>
+            </div>
+            <!-- <footer class="footer">
+              <p>You can search various places in Japan.
+                Please enjoy yourself.</p>
+              <h3>search.site</h3>
+            </footer> -->
+        </body>
+</html>

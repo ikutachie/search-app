@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang='ja'>
+    <head><meta charset='utf-8'>
+        <title>Index</title>
+        <style>
+           
+        </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&family=Patrick+Hand&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <!-- <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous"> -->
+        </head>
+        <body class="container">
+            <header style="background-image: url(/public/image.png);">
+                <h1 class="display-4"><%=title%></h1>
+            </header>
+            <div role="main">
+                <p><%=content%></p>
+                <form method="POST" action="/other">
+                <input type="text" name="msg" class="form-control">
+                <input type="submit" value="Search" class="btn btn primary"><br>
+                </form>
+              </div>
+            <h2>Search by keyword!</h2>
+            <footer class="footer">
+              <p>You can search various places in Japan.
+                Please enjoy yourself.</p>
+              <h3>search.site</h3>
+            </footer>
+        </body>
+        </html>
