@@ -187,7 +187,7 @@ let apikey = process.env.API_ID;
 function generateURI(query){
     var uri = 'https://map.yahooapis.jp/search/local/V1/localSearch?&output=json&detail=full&appid='
     +apikey
-    +'&results=10&query=';
+    +'&results=100&query=';
     uri += encodeURI(query);
     console.log(uri);
     return uri;
