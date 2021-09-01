@@ -1,5 +1,9 @@
 {
   "name": "app",
+  "engines": {
+    "node": "14.17.4",
+    "npm" : "6.14.14"
+  },
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -16,9 +20,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "chie",
-  "license": "MIT"
+  "license": "ISC"
 }
