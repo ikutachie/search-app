@@ -105,9 +105,9 @@ function response_other(request, response){
             xmlHttpRequest.send();
 
             console.log(json);
-            all_name = json.Feature.filter(function(item, index){
-              return true;
-            });
+            // all_name = json.Feature.filter(function(item, index){
+            //   return true;
+            // });
             
             // for(var i=0; i<all_name.length; i++){
             //   console.log(all_name[i].Property)
