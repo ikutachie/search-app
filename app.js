@@ -16,7 +16,7 @@ const other_page = fs.readFileSync('./other.ejs', 'utf8');
 const style_page = fs.readFileSync('./style.css', 'utf8');
 
 // const detail_page = fs.readFileSync('./detail.ejs', 'utf8');
-require('dotenv').config();
+// require('dotenv').config();
 let userId = process.env.NODE_USER_ID;
 // 12345678
 console.log(userId);
