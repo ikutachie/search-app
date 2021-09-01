@@ -4,11 +4,11 @@ const ejs = require('ejs');
 const url = require('url');
 const qs = require('querystring');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-const fetch = require('node-fetch');
-var express = require("express");
-var app = express();
 
-const jquery = require("jquery");
+// var express = require("express");
+// var app = express();
+// const fetch = require('node-fetch');
+// const jquery = require("jquery");
 // var config  = require('./config');
 
 const index_page = fs.readFileSync('./index.ejs', 'utf8');
@@ -17,14 +17,14 @@ const style_page = fs.readFileSync('./style.css', 'utf8');
 
 // const detail_page = fs.readFileSync('./detail.ejs', 'utf8');
 // require('dotenv').config();
-let userId = process.env.NODE_USER_ID;
+// let userId = process.env.NODE_USER_ID;
 // 12345678
-console.log(userId);
-
+// console.log(userId);
 // app.locals.home = {
 //   url: config.url
 // };
 
+//接続
 var server = http.createServer(getFormClient);
 const PORT = process.env.PORT || 3000;
 server.listen(PORT);
@@ -53,7 +53,7 @@ function getFormClient(request, response){
     }
 }
 
-
+//インデックスejs
 function response_index(require, response){
     var msg = "検索したい店名or場所orキーワードを入力してください"
     var content = ejs.render(index_page,{
@@ -66,12 +66,14 @@ function response_index(require, response){
     response.end();
 }
 
+//style.css
 function response_css(require, response){
   response.writeHead(200, {"Content-Type": "text/css"});
   response.write(style_page);
   response.end();
 }
 
+//other.ejs
 function response_other(request, response){
     var msg = ""
    
@@ -172,8 +174,10 @@ function response_other(request, response){
 //     return encodeURI(string);
 // }
 
+//環境変数
 let apikey = process.env.API_ID;
 
+//uri作成
 function generateURI(query){
     var uri = 'https://map.yahooapis.jp/search/local/V1/localSearch?&output=json&detail=full&appid='
     +apikey
