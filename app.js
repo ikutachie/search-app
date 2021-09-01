@@ -21,9 +21,9 @@ let userId = process.env.NODE_USER_ID;
 // 12345678
 console.log(userId);
 
-app.locals.home = {
-  url: config.url
-};
+// app.locals.home = {
+//   url: config.url
+// };
 
 var server = http.createServer(getFormClient);
 const PORT = process.env.PORT || 3000;
