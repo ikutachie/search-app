@@ -16,7 +16,7 @@ const other_page = fs.readFileSync('./other.ejs', 'utf8');
 const style_page = fs.readFileSync('./style.css', 'utf8');
 
 // const detail_page = fs.readFileSync('./detail.ejs', 'utf8');
-// require('dotenv').config();
+require('dotenv').config();
 // let userId = process.env.NODE_USER_ID;
 // 12345678
 // console.log(userId);
@@ -94,7 +94,7 @@ function response_other(request, response){
             xmlHttpRequest.onreadystatechange = function(){
                 if(this.readyState == 4 && this.status == 200){
                     json = JSON.parse(this.responseText);      
-                    // console.log(json);
+                    console.log(json);
                 }
             }
 
@@ -104,10 +104,15 @@ function response_other(request, response){
             // (4)HTTPリクエストを送信
             xmlHttpRequest.send();
 
+            if(json.ResultInfo.Count===0){
+              var err=('検索結果がありません');
+              console.log(err);
+              
+            }else{
             console.log(json);
-            // all_name = json.Feature.filter(function(item, index){
-            //   return true;
-            // });
+            all_name = json.Feature.filter(function(item, index){
+              return true;
+            });
             
             // for(var i=0; i<all_name.length; i++){
             //   console.log(all_name[i].Property)
@@ -130,6 +135,7 @@ function response_other(request, response){
             response.writeHead(200, {"Content-Type": "text/html"});
             response.write(content);
             response.end();
+          }
         });
     }else{
         var msg = "ページが見つかりません"
@@ -181,7 +187,7 @@ let apikey = process.env.API_ID;
 function generateURI(query){
     var uri = 'https://map.yahooapis.jp/search/local/V1/localSearch?&output=json&detail=full&appid='
     +apikey
-    +'&results=100&query=';
+    +'&results=10&query=';
     uri += encodeURI(query);
     console.log(uri);
     return uri;
