@@ -9,7 +9,7 @@ var express = require("express");
 var app = express();
 
 const jquery = require("jquery");
-var config  = require('./config');
+// var config  = require('./config');
 
 const index_page = fs.readFileSync('./index.ejs', 'utf8');
 const other_page = fs.readFileSync('./other.ejs', 'utf8');
